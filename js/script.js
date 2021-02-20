@@ -67,20 +67,27 @@ const color =[
 /***
  * `getRandomQuote` function
 ***/
-const getRandom = arr =>{
-  let randomQuote = arr[Math.floor( Math.random() * arr.length)];
+const getRandomQuote = quotes =>{
+  let randomQuote = quotes[Math.floor( Math.random() * quotes.length)];
   return randomQuote;
 }
 
+/***
+ * `getRandomColor` function
+***/
+const getRandomColor = color =>{
+  let randomColor = color[Math.floor( Math.random() * color.length)];
+  return randomColor;
+}
 
 /***
  * `printQuote` function
 ***/
 const quoteContent = document.getElementById('quote-box');
 const printQuote = () =>{
-  const colorSelected = getRandom(color);
+  const colorSelected = getRandomColor(color);
   document.body.style.backgroundColor = colorSelected;
-  const quoteSelected = getRandom(quotes);
+  const quoteSelected = getRandomQuote(quotes);
   if(quoteSelected.citation == ""){
     quoteContent.innerHTML = `<p class="quote">${quoteSelected.quote}</p>
                               <p class="source">${quoteSelected.source}</p>
